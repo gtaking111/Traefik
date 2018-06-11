@@ -6,11 +6,11 @@ services:
     image: traefik #The official Traefik docker image
     command: --api --docker #Enables the web UI and tells Træfik to listen to docker
     ports:
-      - "80:80"     #The HTTP port
+      - "8081:80"     #The HTTP port
       - "8080:8080" #The Web UI (enabled by --api)
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock #So that Traefik can listen to the Docker events
-  whoami:
-    image: nginx
+  transmission:
+    image: linuxserver/transmission
     labels:
-      - "traefik.frontend.rule=Host:nginx.docker.localhost"
+      - "traefik.frontend.rule=Host:transmission.docker.localhost"
