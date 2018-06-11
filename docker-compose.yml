@@ -14,14 +14,14 @@ services:
     image: linuxserver/transmission
     restart: always
     ports:
-    - "9000:9091"
-    - "59000:51413"
-    - "59000:51413/udp"
+      - "9000:9091"
+      - "59000:51413"
+      - "59000:51413/udp"
     volumes:
-     - "./data:/var/lib/transmission-daemon/info"
-     - "./complete:/var/lib/transmission-daemon/downloads"
-     - "./downloading:/var/lib/transmission-daemon/downloading"
-     - "./incomplete:/var/lib/transmission-daemon/incomplete"
+      - "./data:/var/lib/transmission-daemon/info"
+      - "./complete:/var/lib/transmission-daemon/downloads"
+      - "./downloading:/var/lib/transmission-daemon/downloading"
+      - "./incomplete:/var/lib/transmission-daemon/incomplete"
     resources:
     limits:
     memory:800
