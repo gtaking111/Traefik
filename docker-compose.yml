@@ -11,8 +11,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock #So that Traefik can listen to the Docker events
 
-transmission:
+  transmission:
     image: linuxserver/transmission
-    restart: always
     labels:
-      - "traefik.frontend.rule=Host:transmission.docker.localhost"
+      - "traefik.frontend.rule=Host:transmission1.docker.localhost"
